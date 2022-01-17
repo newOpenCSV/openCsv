@@ -36,7 +36,7 @@ public class MockResultSet implements ResultSet {
     private String[] columnValues;
     private boolean lastValueReadNull;
 
-    private void setLastValueReadNull(String value){
+    private void setLastValueReadNull(String value) {
         lastValueReadNull = (value == null);
     }
 
@@ -757,6 +757,16 @@ public class MockResultSet implements ResultSet {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @Override
+    public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+        return null;
+    }
+
     public <T> T unwrap(Class<T> tClass) throws SQLException {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
@@ -783,30 +793,30 @@ public class MockResultSet implements ResultSet {
 	@Override
 	public void updateRowId(int columnIndex, RowId x) throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 
 	@Override
 	public void updateRowId(String columnLabel, RowId x) throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 
 	@Override
 	public void updateNClob(int columnIndex, NClob nClob) throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 
 	@Override
 	public void updateNClob(String columnLabel, NClob nClob)
 			throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 
 	@Override
@@ -841,14 +851,14 @@ public class MockResultSet implements ResultSet {
 	public void updateSQLXML(int columnIndex, SQLXML xmlObject)
 			throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 
 
 	@Override
 	public void updateSQLXML(String columnLabel, SQLXML xmlObject)
 			throws SQLException {
 		// TODO Auto-generated method stub
-		
-	}
+
+    }
 }
