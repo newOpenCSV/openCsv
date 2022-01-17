@@ -1,13 +1,13 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.sf.opencsv</groupId>
+	<groupId>com.github.newopencsv</groupId>
 	<artifactId>opencsv</artifactId>
 	<packaging>jar</packaging>
-	<version>2.3</version>
+	<version>1.0</version>
 	<name>opencsv</name>
 	<description>A simple library for reading and writing CSV in Java</description>
-	<url>http://opencsv.sf.net</url>
+	<url>https://github.com/newOpenCSV/openCsv</url>
 	<licenses>
 		<license>
 			<name>Apache 2</name>
@@ -21,25 +21,6 @@
 		<developerConnection>scm:svn:https://opencsv.svn.sourceforge.net/svnroot/opencsv/trunk</developerConnection>
 		<url>http://opencsv.svn.sourceforge.net/viewvc/opencsv/</url>
 	</scm>
-	<developers>
-		<developer>
-			<id>glen-smith</id>
-			<name>Glen Smith</name>
-			<email>glen_a_smith@users.sourceforge.net</email>
-			<url>http://blogs.bytecode.com.au/glen</url>
-			<timezone>+10</timezone>
-		</developer>
-		<developer>
-			<id>sean-sullivan</id>
-			<name>Sean Sullivan</name>
-			<email>sullis@users.sourceforge.net</email>
-		</developer>
-		<developer>
-			<id>scott_conway</id>
-			<name>Scott Conway</name>
-			<email>sconway@users.sourceforge.net</email>
-		</developer>
-	</developers>
 	<issueManagement>
 	    <system>Sourceforge</system>
 	    <url>http://sourceforge.net/tracker/?group_id=148905</url>
@@ -49,15 +30,18 @@
 		<testSourceDirectory>test</testSourceDirectory>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
 				<configuration>
 					<excludes>
 						<exclude>**/Test*.java</exclude>
@@ -67,6 +51,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -80,6 +65,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -91,7 +77,9 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.3.0</version>
 				<configuration>
 					<descriptorRefs>
 						<descriptorRef>project</descriptorRef>
@@ -104,6 +92,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
@@ -128,7 +117,7 @@
 						<configuration>
 							<rules>
 								<requireJavaVersion>
-									<version>[1.5,1.6)</version>
+									<version>[11,16)</version>
 								</requireJavaVersion>
 							</rules>
 						</configuration>
@@ -150,27 +139,27 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.3</version>
+				<version>2.7</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>2.1</version>
+				<version>3.0.5</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.3.0</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.1</version>
+				<version>3.1.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>2.0.1</version>
+				<version>3.10.0</version>
 				<configuration>
 					<siteDirectory>doc/site</siteDirectory>
 				</configuration>
