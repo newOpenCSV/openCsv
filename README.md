@@ -20,6 +20,6 @@ public class TestClassValue {
 then you can use like this:
 
 ```java
-    CSVReader reader=DEFAULT.reader(new StringReader(text));
-        Collection<TestClassValue> read=DEFAULT.read(reader,TestClassValue.class);
+    CSVReader reader=CSV.reader(new StringReader(text));
+        Collection<TestClassValue> read=CSV.read(reader,TestClassValue.class);
 ```
