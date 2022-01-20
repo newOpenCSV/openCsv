@@ -5,6 +5,7 @@ import au.com.bytecode.opencsv.CSV;
 import au.com.bytecode.opencsv.CSVReadProc;
 import au.com.bytecode.opencsv.CSVWriteProc;
 import au.com.bytecode.opencsv.CSVWriter;
+import au.com.bytecode.opencsv.annotation.CsvField;
 
 /**
 Copyright 2005 Bytecode Pty Ltd.
@@ -24,11 +25,11 @@ limitations under the License.
 public class AddressExample {
 
 	private static final String ADDRESS_FILE="examples/addresses.csv";
-	
+
 	public static void main(String[] args) {
-		
+
 		final CSV csv = CSV.create();
-		
+
 		final List<String[]> container = new ArrayList<String[]>();
 		csv.read(ADDRESS_FILE, new CSVReadProc() {
 			public void procRow(int rowIndex, String... values) {
@@ -36,10 +37,10 @@ public class AddressExample {
 				System.out.println("Name: [" + values[0] + "]\nAddress: [" + values[1] + "]\nEmail: [" + values[2] + "]");
 			}
 		});
-		
+
 		// Try writing it back out as CSV to the console
 		System.out.println("\n\nGenerated CSV File:\n\n");
-		
+
 		csv.write(System.out, new CSVWriteProc() {
 			public void process(final CSVWriter out) {
 				for (String[] values : container) {
